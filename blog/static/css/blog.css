@@ -1,21 +1,36 @@
 .page-header {
-    background-color: #008080;
+    background-color: #ffffff;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
+    color: #000000;
     font-size: 36pt;
     text-decoration: none;
+    text-align: center;	
 }
 
 .content {
     margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: 'Lobster', cursive;
+}
+
+h4 {
+	font-family: "Roboto";
+	font-size: 15px;
+	color: #828282;
+}
+
+ul.user > li {
+	display: inline-block;	/* Располагаем элементы по горизонтали */
+	list-style: none;	/* Убираем маркеры списка */
+	padding: 5px;		/* Поля вокруг текста */
+	width: 150px;
+	height: 40px;
 }
 
 .date {
@@ -31,14 +46,14 @@ h1, h2, h3, h4 {
 }
 
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
+    color: #000000;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
 }
 
 .post {
-    margin-bottom: 70px;
+	margin-bottom: 20px;
 }
 
 .post h1 a, .post h1 a:visited {
