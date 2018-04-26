@@ -184,4 +184,4 @@ def logout(request, next_page=None,
     return redirect('post_list')
 
 def m400(request):
-    return HttpResponseNotFound("<h1>Not Found</h1>")
+    return HttpResponseNotFound("<h1>Not Found</h1> ")

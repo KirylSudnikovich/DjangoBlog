@@ -8,28 +8,34 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-    <div class="page-header">
-        <h1><a href="/">кучи склад</a></h1>
-        <ul class="menu">
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'post_new' %}" class="top-menu">
-                    <span class="glyphicon glyphicon-plus"></span></a></ul>
-                <li><a href="{% url 'logout' %}" class="top-menu">
-                    <span class="glyphicon glyphicon-remove-sign"></span></a></li>
-            {% endif %}
-            {% if not user.is_authenticated %}
-                <li><a href="{% url 'login' %}" class="top-menu">
-                    <span class="glyphicon glyphicon-user"></span></a></li>
-            {% endif %}
-        </ul>
-    </div>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-8">
-            {% block content %}
-            {% endblock %}
+        <div class=section>
+        <header>
+            <ul class="user">
+            {% for user in users %}
+                    <li><a href="{% url 'a_post_list' pk=user.pk %}">{{ user }}</li></a>
+            {% endfor %}
+            </ul>
+            <ul class="menu">
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'post_new' %}" class="top-menu">
+                        <span class="glyphicon glyphicon-plus"></span></a></ul>
+                    <li><a href="{% url 'logout' %}" class="top-menu">
+                        <span class="glyphicon glyphicon-remove-sign"></span></a></li>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url 'login' %}" class="top-menu">
+                        <span class="glyphicon glyphicon-user"></span></a></li>
+                {% endif %}
+            </ul>
+        </header>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
             </div>
         </div>
     </div>
-</body>
+    </body>
 </html>
